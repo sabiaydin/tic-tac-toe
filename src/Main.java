@@ -25,14 +25,14 @@ public class Main {
             } else {
                 System.out.println(p2 + "'s Turn(o): ");
             }
-            char c = '-';
+            char c;
             if (player1) {
                 c = 'x';
             } else {
                 c = 'o';
             }
-            int row = 0;
-            int column = 0;
+            int row ;
+            int column ;
             while (true){
             System.out.print("Enter a row number: ");
             row = in.nextInt();

@@ -1,28 +1,28 @@
 public class Operations {
     public static void drawBoard(char[][] board) {
         System.out.println("Board:");
-        for (int i = 0; i < board.length; i++) {
+        for (char[] chars : board) {
             for (int j = 0; j < board.length; j++) {
-                System.out.print(board[i][j]);
+                System.out.print(chars[j]);
             }
             System.out.println();
         }
     }
     public static  char playerHasWon(char[][] board){
-        for (int i=0;i<board.length;i++){
+        for (char[] chars : board) {
             boolean inARow = true;
-            char value = board[i][0];
-            if(value=='-'){
-                inARow=false;
-            }else{
-                for (int j=1;j<board[i].length;j++){
-                    if (board[i][j]!=value){
+            char value = chars[0];
+            if (value == '-') {
+                inARow = false;
+            } else {
+                for (int j = 1; j < chars.length; j++) {
+                    if (chars[j] != value) {
                         inARow = false;
                         break;
                     }
                 }
             }
-            if (inARow){
+            if (inARow) {
                 return value;
             }
         }
@@ -77,9 +77,9 @@ public class Operations {
             return value2;
         } return ' ';}
     public static boolean boardIsFull(char[][] board1) {
-        for(int i = 0; i < board1.length; i++) {
-            for(int j = 0; j < board1[i].length; j++) {
-                if(board1[i][j] == '-') {
+        for (char[] chars : board1) {
+            for (char aChar : chars) {
+                if (aChar == '-') {
                     return false;
                 }
             }
